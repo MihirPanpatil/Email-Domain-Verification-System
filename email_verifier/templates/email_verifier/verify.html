@@ -1,0 +1,27 @@
+<!-- email_verifier/templates/email_verifier/verify.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email and Domain Verifier</title>
+</head>
+<body>
+    <h1>Email and Domain Verifier</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Verify</button>
+    </form>
+
+    <div>
+    {% if is_valid_email and is_valid_domain %}
+        <p>The email address and domain name are valid.</p>
+    {% elif is_valid_email %}
+        <p>The email address is valid, but the domain name is not.</p>
+    {% elif is_valid_domain %}
+        <p>The domain name is valid, but the email address is not.</p>
+    {% else %}
+        <p>The email address and domain name are not valid.</p>
+    {% endif %}
+    </div>
+</body>
+</html>
