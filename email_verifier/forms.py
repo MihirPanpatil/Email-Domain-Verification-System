@@ -2,5 +2,5 @@
 from django import forms
 
 class EmailVerifierForm(forms.Form):
-    email = forms.EmailField(label='Email Address')
-    domain = forms.CharField(label='Domain Name')
+    email = forms.EmailField(label='E-mail Address. ')
+    domain = forms.CharField(label='Domain Name. ')

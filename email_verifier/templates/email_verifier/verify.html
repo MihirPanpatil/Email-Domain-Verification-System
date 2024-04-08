@@ -3,25 +3,94 @@
 <html>
 <head>
     <title>Email and Domain Verifier</title>
+    <link rel="icon" href="https://images.pexels.com/photos/5011647/pexels-photo-5011647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class = "w-16 h-16 text-white p-2 rounded-full"
+          type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <h1>Email and Domain Verifier</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Verify</button>
-    </form>
 
-    <div>
-    {% if is_valid_email and is_valid_domain %}
-        <p>The email address and domain name are valid.</p>
-    {% elif is_valid_email %}
-        <p>The email address is valid, but the domain name is not.</p>
-    {% elif is_valid_domain %}
-        <p>The domain name is valid, but the email address is not.</p>
-    {% else %}
-        <p>The email address and domain name are not valid.</p>
-    {% endif %}
-    </div>
+    <header class="text-gray-400 bg-gray-900 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+            <img src = "https://images.pexels.com/photos/5011647/pexels-photo-5011647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class = "w-16 h-16 text-white p-2 rounded-full"></img>
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span class="ml-3 text-xl">E-MAIL ADDRESS AND DOMAIN VERIFICATION SYSTEM</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:text-white">About Us</a>
+            <a class="mr-5 hover:text-white">Contact</a>
+            <a class="mr-5 hover:text-white">Know more</a>
+            <a class="mr-5 hover:text-white">Support</a>
+          </nav>
+          <div class = "px-7"></div>
+        </div>
+      </header>
+
+      <section class="text-gray-400 bg-gray-900 body-font">
+        <div class="container px-5 py-32 mx-auto flex flex-wrap items-center">
+          <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
+            <h1 class="title-font font-medium text-3xl text-white">Ensure you're reaching the right person with a quick lead verification!</h1>
+            <p class="leading-relaxed mt-4">Unsure about wasting time on unqualified leads? This platform streamlines the process. It utilizes Google's secure DNS-over-HTTPS for verification, ensuring top-notch accuracy.  Stop chasing dead ends and verify your leads with confidence!</p>
+          </div>
+          <div class="lg:w-2/6 md:w-1/2 bg-gray-800 bg-opacity-50 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+            <h1 class="text-white text-2xl font-medium title-font mb-5">Verify!</h2>
+            <form method="post">
+                <table>{% csrf_token %}</table>
+                <table>{{ form.as_p }}</table>
+                <div class="py-5"></div>
+                <button class = "relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800" type="submit">
+                    <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                        Verify
+                    </span>
+                </button>
+                <div>
+                    {% if is_valid_email and is_valid_domain %}
+                        <p>The email address and domain name are valid.</p>
+                    {% elif is_valid_email %}
+                        <p>The email address is valid, but the domain name is not.</p>
+                    {% elif is_valid_domain %}
+                        <p>The domain name is valid, but the email address is not.</p>
+                    {% else %}
+                        <p>The email address and domain name are not valid.</p>
+                    {% endif %}
+                    </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <footer class="text-gray-400 bg-gray-900 body-font">
+        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+          <a class="flex title-font font-medium items-center md:justify-start justify-center text-white">
+            <span class="ml-3 text-lg">E-MAIL ADDRESS AND DOMAIN VERIFICATION SYSTEM</span>
+          </a>
+          <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">© 2024 E-MAIL ADDRESS AND DOMAIN VERIFICATION SYSTEM
+          </p>
+          <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+            <a class="text-gray-400">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-400">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-400">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-400">
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
+        </div>
+      </footer>
 </body>
 </html>
